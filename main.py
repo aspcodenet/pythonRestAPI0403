@@ -5,6 +5,7 @@ from config import DevelopmentConfig, ProductionConfig
 from flask_migrate import Migrate, upgrade
 import os
 
+
 app = Flask(__name__)
 if os.getenv('RUNENVIRONMENT') == "Production":
     app.config.from_object(ProductionConfig())
@@ -26,7 +27,7 @@ def homePage():
     return s
 
 
-app.route("/api/customer/<id>", methods=["PUT"])
+@app.route("/api/customer/<id>", methods=["PUT"])
 def apiCustomerUpdate(id):
     data = request.get_json()
     c = Customer.query.filter_by(Id=id).first_or_404()

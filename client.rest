@@ -1,0 +1,38 @@
+### GET single
+GET http://127.0.0.1:5000/api/customer/101
+
+
+### Skapa
+POST http://127.0.0.1:5000/api/customer 
+content-type: application/json
+
+{
+    "City": "Stockholm",
+  "Name": "Stefan Test123",
+  "Telephone": "1112233",
+  "TelephoneCountryCode": 46
+}
+
+
+// Semantiken i PUT = Replace, PATCH = uppdatera delar
+### Skapa
+PUT http://127.0.0.1:5000/api/customer/2
+content-type: application/json
+
+{
+    "City": "Stockholm",
+  "Name": "Stefan H 123",
+  "Telephone": "1112233",
+  "TelephoneCountryCode": 46
+}
+
+
+
+### Multiple
+GET http://127.0.0.1:5000/api/customer
+
+
+
+
+
+
